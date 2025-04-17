@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intern Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+    function checkLoginStatus() {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      if (!isLoggedIn) {
+        document.querySelector(".logout-btn").style.display = "none";
+      }
+    }
+    function goToQuotePage() {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      if (isLoggedIn) {
+        alert("Redirecting to Quote Page..."); // Replace with real logic or page
+      } else {
+        window.location.href = "login.html";
+      }
+    }
+
+    window.onload = checkLoginStatus;
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">InternConnect</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+      <div class="nav-actions">
+      <a class="quote-btn" href="javascript:void(0)" onclick="goToQuotePage()">Get A Quote</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="tagline">Crack it. Connect it. Intern it.</p>
+      <h1>Where Interns Are Hired<br>Not Ghosted:)</h1>
+      <p class="desc">InternConnect bridges students and internships through smart skill-matching. A fair, user-friendly platform that predicts eligible opportunities, simplifying the path to success. Where talent meets opportunity!</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Explore More →</a>
+        <a href="#" class="btn-secondary">View All Services</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Add your image here if needed -->
+    </div>
+  </section>
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="grid">
+      <div class="step">
+        <div class="icon user-plus"></div>
+        <h3>Create Your Profile</h3>
+      </div>
+      <div class="step">
+        <div class="icon briefcase"></div>
+        <h3>Get Matched with Opportunities</h3>
+      </div>
+      <div class="step">
+        <div class="icon rocket"></div>
+        <h3>Apply & Start Your Journey</h3>
+      </div>
+    </div>
+  </section>
+  <section class="featured-opportunities">
+    <h2>Featured Internship Opportunities</h2>
+    <div class="grid">
+      <div class="opportunity">
+        <h3>Company A</h3>
+        <p>Marketing Intern</p>
+        <p>New York, NY</p>
+        <button class="button">Apply Now</button>
+      </div>
+      <div class="opportunity">
+        <h3>Company B</h3>
+        <p>Software Engineer Intern</p>
+        <p>Remote</p>
+        <button class="button">Apply Now</button>
+      </div>
+      <div class="opportunity">
+        <h3>Company C</h3>
+        <p>Business Analyst Intern</p>
+        <p>Remote</p>
+        <button class="button">Apply Now</button>
+      </div>
+    </div>
+  </section>
+  <section class="benefits">
+    <h2>Benefits for Students</h2>
+    <div class="grid">
+      <div class="benefit">
+        <div class="icon briefcase"></div>
+        <p>Gain real-world experience</p>
+      </div>
+      <div class="benefit">
+        <div class="icon file-text"></div>
+        <p>Build your resume</p>
+      </div>
+      <div class="benefit">
+        <div class="icon users"></div>
+        <p>Connect with top companies</p>
+      </div>
+      <div class="benefit">
+        <div class="icon globe"></div>
+        <p>Flexible, remote and paid options</p>
+      </div>
+    </div>
+  </section>
+  <section class="success-stories">
+    <h2>Success Stories</h2>
+    <div class="grid">
+      <div class="story">
+        <div class="avatar">E</div>
+        <div>
+          <p>Emily R.</p>
+          <p>"It was an amazing experience, and I learned a lot!"</p>
+        </div>
+      </div>
+      <div class="story">
+        <div class="avatar">J</div>
+        <div>
+          <p>Jason M.</p>
+          <p>"The internship helped me develop new skills!"</p>
+        </div>
+      </div>
+      <div class="story">
+        <div class="avatar">S</div>
+        <div>
+          <p>Sarah T.</p>
+          <p>"I made great connections and gained real experience!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="notifications">
+    <h2>Get notified about new internships!</h2>
+    <div class="email-subscription">
+      <input type="email" placeholder="Enter your email" />
+      <button class="button">Subscribe</button>
+    </div>
+  </section>
+  <button class="back-to-top">↑</button>
+</body>
+</html>

@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e1a38;
+  color: #fff;
+}
+
+.top-bar {
+  background-color: #031032;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.top-bar span, .social-icons a {
+  margin: 5px;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout-btn {
+  background-color: #f44336; /* Red or your preferred color */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.quote-btn {
+  background-color: #3f80ff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background: linear-gradient(90deg, #1c2a4b 60%, #0e1a38 40%);
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text .tagline {
+  color: #3f80ff;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-text .desc {
+  margin-bottom: 30px;
+  color: #d0d6e1;
+}
+
+.hero-buttons a {
+  margin-right: 15px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #3f80ff;
+  color: white;
+}
+
+.btn-secondary {
+  color: #3f80ff;
+  border: 1px solid #3f80ff;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  background-color: #3f80ff;
+  padding: 20px 0;
+  gap: 40px;
+  font-weight: 500;
+}
+
+.service {
+  color: white;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Section Boxes */
+.step, .opportunity, .benefit, .story {
+  background-color: #fff;
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Icon Styling */
+.icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  background-color: #3b82f6;
+  border-radius: 50%;
+}
+
+/* Avatar in Success Stories */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+/* Email Subscription */
+.email-subscription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.email-subscription input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #3b82f6;
+  border-radius: 9999px;
+}
+
+/* Shared Button */
+.button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background-color: #1d4ed8;
+}

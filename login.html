@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InternConnect - Login/Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-image: url('https://example.com/internship-image.jpg'); /* Replace with a real internship-related image URL */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+      border-top: 5px solid #2563eb;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #2563eb;
+      letter-spacing: 1px;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .password-toggle {
+      position: relative;
+    }
+
+    .password-toggle input {
+      padding-right: 2.5rem;
+    }
+
+    .password-toggle span {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #2563eb;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .toggle button {
+      background: none;
+      border: none;
+      color: #2563eb;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2 id="formTitle">InternConnect Login</h2>
+    <form id="authForm">
+      <div class="input-group" id="nameGroup" style="display: none;">
+        <input type="text" id="name" placeholder="Full Name" />
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email Address" required />
+      </div>
+      <div class="input-group password-toggle">
+        <input type="password" id="password" placeholder="Password" required />
+        <span id="togglePassword">Show</span>
+      </div>
+      <div class="input-group" id="skillsGroup" style="display: none;">
+        <select id="skills">
+          <option value="">Select your primary skill</option>
+          <option value="web">Web Development</option>
+          <option value="mobile">Mobile Development</option>
+          <option value="data">Data Science</option>
+          <option value="design">UI/UX Design</option>
+          <option value="marketing">Digital Marketing</option>
+        </select>
+      </div>
+      <button type="submit" id="submitBtn">Login</button>
+    </form>
+    <div class="toggle">
+      <span id="toggleText">Don't have an InternConnect account?</span>
+      <button id="toggleBtn">Sign Up</button>
+    </div>
+  </div>
+
+  <script>
+    const formTitle = document.getElementById('formTitle');
+    const nameGroup = document.getElementById('nameGroup');
+    const skillsGroup = document.getElementById('skillsGroup');
+    const submitBtn = document.getElementById('submitBtn');
+    const toggleText = document.getElementById('toggleText');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const authForm = document.getElementById('authForm');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    let isLogin = true;
+
+    toggleBtn.addEventListener('click', () => {
+      isLogin = !isLogin;
+      formTitle.textContent = isLogin ? 'InternConnect Login' : 'InternConnect Signup';
+      nameGroup.style.display = isLogin ? 'none' : 'block';
+      skillsGroup.style.display = isLogin ? 'none' : 'block';
+      submitBtn.textContent = isLogin ? 'Login' : 'Sign Up';
+      toggleText.textContent = isLogin
+        ? "Don't have an InternConnect account?"
+        : "Already have an InternConnect account?";
+      toggleBtn.textContent = isLogin ? 'Sign Up' : 'Login';
+    });
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      togglePassword.textContent = type === 'password' ? 'Show' : 'Hide';
+    });
+
+    authForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = passwordInput.value;
+      const skill = document.getElementById('skills').value;
+
+      if (isLogin) {
+        alert(`Logging in as ${email}`);
+    } else {
+        alert(`Signing up as ${name} (${email}), Skill: ${skill}`);
+    }
+    localStorage.setItem("isLoggedIn", "true");
+    window.location.href = "home.html";
+    });
+  </script>
+
+</body>
+</html>
